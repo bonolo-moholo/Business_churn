@@ -1,4 +1,4 @@
-# Business_churn
+# Banking Customer churn
 
 ## Table of contents
 
