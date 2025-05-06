@@ -107,19 +107,22 @@ EDA involved to answer these questions:
   
 ### Building a model
 
-- A pipeline that included the transformers(StandardScaler, OneHotEncoder, passthrough) and the logistic regression was created
+- A pipeline that included the transformers(StandardScaler, OneHotEncoder, passthrough), SMOTE and the logistic regression was created
 - The pipeline was then fit to the data
 - Predictions were then made on the train and test data
 - The model was evaluated using the Accuracy_score and the classification report
 - This is how the model performed:
-   - Accuracy: 81% for test data
-   - Precision: 82%% for test data
-   - Recall (Sensitivity): 97% for test data
-   - F1-Score: 89% for test data
-- The confusion matrix to check where the model makes mistakes. and ROC curve were plotted to validate further
-- The Feature importance was plotted to check features that contribute the most to churn
+   - Accuracy: 71.7% of the total predictions were correct
+   - Precision: 90% of all Non Exited Customers were correct and of all predicted Exited customers only 39% actually exited
+   - Recall (Sensitivity): Of all actual Not Exited customers 72% were correctly predicted and of all actual Exited 70% were identified correctly
+   - F1-Score: 0.50 there is moderate balance between precision and recall
+- The confusion matrix: True Negatives = 1151, False Positives = 442, False Negatives = 122, True Positives = 285
+- ROC curve were plotted to validate further and it was at 78%
+- The Feature importance was plotted to check features that contribute the most to churn and this will be described under insights.
 
   ### Insights
+
+  ##### With regard to model preformance, the model is affected by class imbalance thus is performs better at detecting churn than it does at avoiding false alarms and thus it needs to be improved further
 
 - The highest contributing feature to churn is low active membership
 - Followed by Geographical location in Germany, showing more customers churning most at Germany
