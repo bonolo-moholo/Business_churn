@@ -12,7 +12,7 @@
 - [Recommendations](#recommendation)
 - [References](#references)
 ## Project Overview
-The project is about building a machine learning model to predict banking customer churn.The data was collected from kaggle, it had 10000 rows and 14 columns which included: CustomerId, Surname, Creditscore, Geography, Age, Gender, Tenure, Balance, HasCrCard, IsActiveMember,EstimatedSalary and Exited. The model Built is Logistic Regression and this model was chosen because of its speed and interpretability. All features were included in the model except the surname, the row number and the customerID and these were excuded because of their high cardinality.
+The project is about building a machine learning model to predict banking customer churn.The data was collected from kaggle, it had 10000 rows and 14 columns which included: CustomerId, Surname, Creditscore, Geography, Age, Gender, Tenure, Balance, HasCrCard, IsActiveMember,EstimatedSalary and Exited. The model Built initially was Logistic Regression and this model was chosen because of its interpretability and accuracy. All features were included in the model except the surname, the row number and the customerID and these were excuded because of their high cardinality. After evaluating the model it was noted that accuracy was at 71% and overall model performance was affected by class imbalance. Random forest model was then used to improve the accuracy which then increased significantly but is still open to improvement. 
 
 
 ## Tools
@@ -107,8 +107,8 @@ EDA involved to answer these questions:
   
 ### Building a model
 
-- A pipeline that included the transformers(StandardScaler, OneHotEncoder, passthrough), SMOTE and the logistic regression was created
-- The pipeline was then fit to the data
+- A pipeline that included the transformers(StandardScaler, OneHotEncoder, passthrough, SMOTE  and the logistic regression) was created
+- The pipeline was then fitted to the data
 - Predictions were then made on the train and test data
 - The model was evaluated using the Accuracy_score and the classification report
 - This is how the model performed:
@@ -119,10 +119,15 @@ EDA involved to answer these questions:
 - The confusion matrix: True Negatives = 1151, False Positives = 442, False Negatives = 122, True Positives = 285
 - ROC curve were plotted to validate further and it was at 78%
 - The Feature importance was plotted to check features that contribute the most to churn and this will be described under insights.
+- Seeing that performance still needed improvement, a different algorithm was explored which is Random Forest and the model improved as followes:
+   - Accuracy: improved to 85.95% 
+   - Precision: 87% of all Non Exited Customers were correct and of all predicted Exited customers  recall improved to 77%
+   - Recall (Sensitivity): Of all actual Not Exited customers 97% were correctly predicted and of all actual Exited 44% were identified correctly
+   - F1-Score: is now 0.92 for Non-Exited and 0.56 for Exited
+- The confusion matrix: True Negatives = 1540, False Positives = 53, False Negatives = 228, True Positives = 179
+- ROC-AUC was 85%
 
   ### Insights
-
-  ##### With regard to model preformance, the model is affected by class imbalance thus is performs better at detecting churn than it does at avoiding false alarms and thus it needs to be improved further
 
 - The highest contributing feature to churn is low active membership
 - Followed by Geographical location in Germany, showing more customers churning most at Germany
