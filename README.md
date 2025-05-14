@@ -12,7 +12,7 @@
 - [Recommendations](#recommendation)
 - [References](#references)
 ## Project Overview
-The project is about building a machine learning model to predict banking customer churn.The data was collected from kaggle, it had 10000 rows and 14 columns which included: CustomerId, Surname, Creditscore, Geography, Age, Gender, Tenure, Balance, HasCrCard, IsActiveMember,EstimatedSalary and Exited. The model Built initially was Logistic Regression and this model was chosen because of its interpretability and accuracy. All features were included in the model except the surname, the row number and the customerID and these were excuded because of their high cardinality. After evaluating the model it was noted that accuracy was at 71% and overall model performance was affected by class imbalance. Random forest model was then used to improve the accuracy which then increased significantly but is still open to improvement. 
+The project is about building a machine learning model to predict banking customer churn.The data was collected from kaggle, it had 10000 rows and 14 columns which included: CustomerId, Surname, Creditscore, Geography, Age, Gender, Tenure, Balance, HasCrCard, IsActiveMember,EstimatedSalary and Exited. The model Built initially was Logistic Regression and this model was chosen because of its interpretability and accuracy. All features were included in the model except the surname, the row number and the customerID and these were excuded because of their high cardinality. After evaluating the model it was noted that accuracy was at 71% and overall model performance was affected by class imbalance. Random forest model was then used to improve the accuracy which then increased significantly to 85% but is still open to improvement. 
 
 
 ## Tools
